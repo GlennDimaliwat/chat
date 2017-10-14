@@ -1,0 +1,19 @@
+<h1>Conversations#index</h1>
+<%= link_to("Logout #{current_user.email}", destroy_user_session_path, method: :delete) if user_signed_in? %>   
+
+<hr>
+
+<%= form_with(url: conversations_url, local:true) do |f| %>
+    <div>
+        <%= f.label :topic %>
+        <%= f.text_field :topic, value: 'Test' %>
+    </div>
+    <%= f.submit 'Create/Join Conversation' %>
+<% end %>
+
+<hr>
+
+<h1>All Users</h1>
+<% @users.each do |user| %>
+    <%= user.email %>
+<% end %>

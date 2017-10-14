@@ -1,0 +1,17 @@
+<h1>Topic: <%= @conversation.topic %></h1>
+
+<% unless @conversation.messages.empty? %>
+    <% @conversation.messages.each do |m| %>
+        <%= m.user.email %>: <%= m.body %><br>
+    <% end %>
+<% end %>
+
+
+<%= form_with(url: messages_update_path, method: :patch, local: true) do |f| %>
+    <%= f.hidden_field :conversation_id, value: @conversation.id %>
+    <div>
+        <%= f.label :body %>
+        <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Send' %>
+<% end %>

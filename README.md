@@ -32,6 +32,7 @@ Simple chat application for Ruby on Rails
 - index - Shows a list of Conversations
 - create - Creates a new Conversation or Joins an existing Conversation
 - show - Shows the conversation and its messages
+- destroy - Deletes a conversation and its messages
 
 ### MessagesController
 - update - Updates the messages in a Conversation

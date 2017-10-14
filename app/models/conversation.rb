@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: conversations
+#
+#  id         :integer          not null, primary key
+#  topic      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Conversation < ApplicationRecord
     has_many :user_conversations
     has_many :messages, dependent: :destroy

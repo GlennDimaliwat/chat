@@ -22,6 +22,6 @@
 <h2>All Active Conversations</h2>
 <ul>
 <% @conversations.each do |conversation| %>
-    <li><%= link_to conversation.topic, conversation_path(conversation) %></li>
+    <li><%= link_to conversation.topic, conversation_path(conversation) %> | <%= link_to 'Delete conversation', conversation_path(conversation), method: :delete, data: { confirm: "Are you sure?" } %></li>
 <% end %>
 </ul>

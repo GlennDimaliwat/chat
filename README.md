@@ -11,7 +11,7 @@ Simple chat application for Ruby on Rails
 - id: integer
 - email: string
 
-### Conversations
+### Conversation
 - id: integer
 - topic: string
 
@@ -19,7 +19,7 @@ Simple chat application for Ruby on Rails
 - user_id: User
 - conversation_id: Conversation
 
-### Messages
+### Message
 - id: integer
 - user_id: User
 - conversation_id: Conversation

@@ -12,7 +12,7 @@
 <% end %>
 
 
-<%= form_with(url: messages_update_path, method: :patch, local: true) do |f| %>
+<%= form_with(url: message_path, method: :patch, local: true) do |f| %>
     <%= f.hidden_field :conversation_id, value: @conversation.id %>
     <div>
         Message<br>

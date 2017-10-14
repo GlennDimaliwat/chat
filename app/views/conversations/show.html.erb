@@ -1,17 +1,28 @@
 <h1>Topic: <%= @conversation.topic %></h1>
 
 <% unless @conversation.messages.empty? %>
+    <uL>
     <% @conversation.messages.each do |m| %>
-        <%= m.user.email %>: <%= m.body %><br>
+        <li>
+            <strong><%= m.user.email %>:</strong>
+            <p><%= simple_format(m.body) %></p>
+        </li>
     <% end %>
+    </uL>
 <% end %>
 
 
 <%= form_with(url: messages_update_path, method: :patch, local: true) do |f| %>
     <%= f.hidden_field :conversation_id, value: @conversation.id %>
     <div>
-        <%= f.label :body %>
+        Message<br>
         <%= f.text_area :body %>
     </div>
     <%= f.submit 'Send' %>
 <% end %>
+
+<br>
+<%= link_to 'Back', conversations_path %>
+
+<!-- Reload page every 10 secs -->
+<!-- <script language="javascript" type="text/javascript">setTimeout("location.reload();",10000);</script> -->
